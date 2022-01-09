@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+RewriteRule ^user/(.*)/videos$ /channel_videos.php?n=$1
+RewriteRule ^user/(.*)/discussion$ /channel_discussion.php?n=$1
+RewriteRule ^user/(.*)/feed$ /channel_feed.php?n=$1
+RewriteRule ^user/(.*)/featured$ /channel.php?n=$1
+RewriteRule ^user/(.*)$ /channel.php?n=$1
