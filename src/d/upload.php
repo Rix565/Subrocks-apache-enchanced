@@ -88,9 +88,7 @@
 
 
         /* Process the thumbnail... */
-        $video_properties->video_thumbnail = shell_exec('
-            ' . $__server->ffmpeg_binary . ' -hide_banner -loglevel error -i "../dynamic/videos/' . $video_properties->video_rid . '.mp4" -vf "select=eq(n\\,34),scale=-1:360" -vframes 1 "../dynamic/thumbs/' . $video_properties->video_rid . '.png" 2>&1
-        ');
+        $video_properties->video_thumbnail = shell_exec('' . $__server->ffmpeg_binary . ' -hide_banner -loglevel error -i "../dynamic/videos/' . $video_properties->video_rid . '.mp4"  -ss 10 -vframes 1 "../dynamic/thumbs/' . $video_properties->video_rid . '.png" 2>&1');
         
         /* For some reason, I have to do this manually for only the thumbnail */
         
